@@ -53,8 +53,7 @@ const [campaigns, setCampaigns] = useState([
     goal_amount: 100000,
     image: "https://images.unsplash.com/photo-1584515933487-779824d29309"
   }
-]);  
-  // Auth state
+]);  // Auth state
   const [token, setToken] = useState(localStorage.getItem("token") || null);
   const [username, setUsername] = useState(localStorage.getItem("username") || null);
   
@@ -91,8 +90,10 @@ const [campaigns, setCampaigns] = useState([
   const fetchCampaigns = () => {
     fetch(`${API_BASE_URL}/api/v1/campaigns/`)
       .then(res => res.json())
-      .then(data => {
+.then(data => {
+    if (data.length > 0) {
         setCampaigns(data);
+    }
         // Update selected campaign if it's currently open to show new progress
         if (selectedCampaign) {
           const updated = data.find(c => c.id === selectedCampaign.id);
