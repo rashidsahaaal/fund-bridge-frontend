@@ -28,8 +28,32 @@ import ScrollToTop from "./Components/ScrollToTop";
 const API_BASE_URL = import.meta.env.VITE_API_URL || "https://fundbridge-backend-rashid.onrender.com";
 
 function App() {
-  const [campaigns, setCampaigns] = useState([]);
-  
+const [campaigns, setCampaigns] = useState([
+  {
+    id: 1,
+    title: "Clean Water for Rural Communities",
+    description: "Providing clean water access.",
+    raised_amount: 13150,
+    goal_amount: 50000,
+    image: "https://images.unsplash.com/photo-1542810634-71277d95dcbb"
+  },
+  {
+    id: 2,
+    title: "Education for Every Child",
+    description: "Helping children get education.",
+    raised_amount: 8800,
+    goal_amount: 25000,
+    image: "https://images.unsplash.com/photo-1509099836639-18ba1795216d"
+  },
+  {
+    id: 3,
+    title: "Emergency Medical Relief Fund",
+    description: "Emergency support for patients.",
+    raised_amount: 45000,
+    goal_amount: 100000,
+    image: "https://images.unsplash.com/photo-1584515933487-779824d29309"
+  }
+]);  
   // Auth state
   const [token, setToken] = useState(localStorage.getItem("token") || null);
   const [username, setUsername] = useState(localStorage.getItem("username") || null);
