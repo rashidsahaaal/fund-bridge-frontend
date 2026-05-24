@@ -25,7 +25,7 @@ import Contact from "./Pages/Contact";
 // Components
 import ScrollToTop from "./Components/ScrollToTop";
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
+const API_BASE_URL = import.meta.env.VITE_API_URL || "https://fundbridge-backend-rashid.onrender.com";
 
 function App() {
   const [campaigns, setCampaigns] = useState([]);
